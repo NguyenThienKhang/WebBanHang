@@ -26,7 +26,7 @@ namespace WebBanHang.Controllers
         {
 
             var pageIndex = (int)(page != null ? page : 1);
-            var pageSize = 6;
+            var pageSize = 3;
             var productList = _db.Products.Include(x => x.Category).ToList();
             // Thống kê số trang
             var pageSum =productList.Count()/pageSize +(productList.Count()%pageSize>0?1:0);
