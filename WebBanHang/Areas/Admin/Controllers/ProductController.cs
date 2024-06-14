@@ -22,12 +22,12 @@ namespace WebBanHang.Controllers
             _hosting = hosting;
         }
         //Hiển thị danh sách sản phẩm
-        public IActionResult Index(int ?page)
+        public IActionResult Index(int ?page,string search="")
         {
 
             var pageIndex = (int)(page != null ? page : 1);
             var pageSize = 3;
-            var productList = _db.Products.Include(x => x.Category).ToList();
+            var productList = _db.Products.Include(x => x.Category).Where(i=>i.Name.ToLower().Contains(search.ToLower())).ToList();
             // Thống kê số trang
             var pageSum =productList.Count()/pageSize +(productList.Count()%pageSize>0?1:0);
             // Truyền dữ liệu cho View

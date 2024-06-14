@@ -25,10 +25,10 @@
                                 </div>
 
                                 <div class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
-                                    <div class="">
-                                        <input type="text" name="qty" value="@item.Quantity"
-                                               class="form-control" />
+                                  <div class="">
+                                        <input type="number" name="qty" value="@item.Quantity" class="form-control" />
                                     </div>
+                                    <br />
                                     <div class="">
                                         <text class="h6">@string.Format("${0:#,##0}", item.Product.Price)</text> <br />
                                     </div>
@@ -40,7 +40,7 @@
                                         @*<a href="#" class="btn btn-light border text-primary icon-hover-primary"> Update</a>
                                         <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>*@
                                         <button type="submit" class="btn btn-light border text-primary icon-hover-primary">Update</button>
-                                        <button type="submit" class="btn btn-light border text-danger icon-hover-danger">Delete</button>
+                                        <button  asp-controller="Cart" asp-action="Delete" class="btn btn-light border text-danger icon-hover-danger">Delete</button>
 
                                     </div>
                                 </div>
