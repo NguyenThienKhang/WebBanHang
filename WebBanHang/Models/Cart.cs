@@ -60,16 +60,25 @@ namespace WebBanHang.Models
 
         }
         //tính tiền đơn hàng
-        public double Total()
+        public double Total
+
         {
-            double total = _items.Sum(x => x.Quantity * x.Product.Price);
-            return total;
+            get
+            {
+
+
+                double total = _items.Sum(x => x.Quantity * x.Product.Price);
+                return total;
+            }
         }
         // tính tổng số lượng
-        public double Quantity()
+        public double Quantity
         {
-            double quantity = _items.Sum(x => x.Quantity );
-            return quantity;
+            get
+            {
+                double quantity = _items.Sum(x => x.Quantity);
+                return quantity;
+            }
         }
     }
 }

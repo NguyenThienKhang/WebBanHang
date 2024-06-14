@@ -2,14 +2,15 @@
 <section class="bg-light my-5">
     <div class="container">
         <div class="row">
-            <!-- cart -->
+             
             <div class="col-lg-9">
                 <div class="card border shadow-0">
                     <div class="m-4">
                         <h4 class="card-title mb-4">Your shopping cart</h4>
                         @foreach (var item in Model.Items)
                         {
-
+                            <form asp-action="Update" asp-controller="Cart">
+                            <input  type="hidden" name="productId" value="@item.Product.Id"/>
                             <div class="row gy-3 mb-4">
                                 <div class="col-lg-5">
                                     <div class="me-lg-5">
@@ -36,19 +37,20 @@
                                 <div class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
                                     <div class="float-md-end">
 
-                                        <a href="#" class="btn btn-light border text-primary icon-hover-primary"> Update</a>
-
-                                        <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>
+                                        @*<a href="#" class="btn btn-light border text-primary icon-hover-primary"> Update</a>
+                                        <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>*@
+                                        <button type="submit" class="btn btn-light border text-primary icon-hover-primary">Update</button>
+                                        <button type="submit" class="btn btn-light border text-danger icon-hover-danger">Delete</button>
 
                                     </div>
                                 </div>
                             </div>
+                             </form>
                         }
                     </div>
                 </div>
             </div>
-            <!-- cart -->
-            <!-- summary -->
+             
             <div class="col-lg-3">
                 <div class="card shadow-0 border">
                     <div class="card-body">
@@ -85,7 +87,6 @@
                 </div>
             </div>
         </div>
-        <!-- summary -->
     </div>
 </div>
 </section>

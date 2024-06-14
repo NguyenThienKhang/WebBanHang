@@ -45,5 +45,41 @@ namespace WebBanHang.Areas.Customer.Controllers
             }
             return Json(new { msg = "error" });
         }
+        // updtate
+        public IActionResult Update(int productId,int qty)
+        {
+            var product = _db.Products.FirstOrDefault(x => x.Id == productId);
+            if (product != null)
+            {
+                Cart cart = HttpContext.Session.GetJson<Cart>("CART");
+                if (cart == null)
+                {
+                    cart = new Cart();
+                }
+                cart.Update(productId, qty);
+                HttpContext.Session.SetJson("CART", cart);
+                // return Json(new { msg="success", qty = cart.Quantity});
+                return RedirectToAction("Index");
+            }
+            return Json(new { msg = "error" });
+        }
+        // delete
+        public IActionResult Delete(int productId)
+        {
+            var product = _db.Products.FirstOrDefault(x => x.Id == productId);
+            if (product != null)
+            {
+                Cart cart = HttpContext.Session.GetJson<Cart>("CART");
+                if (cart == null)
+                {
+                    cart = new Cart();
+                }
+                cart.Delete(productId);
+                HttpContext.Session.SetJson("CART", cart);
+                // return Json(new { msg="success", qty = cart.Quantity});
+                return RedirectToAction("Index");
+            }
+            return Json(new { msg = "error" });
+        }
     }
 }
