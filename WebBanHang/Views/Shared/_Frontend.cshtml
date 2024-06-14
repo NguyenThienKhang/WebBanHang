@@ -18,35 +18,27 @@
     <link href="~/lib/font-awesome/css/fontawesome.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 </head>
+
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">Start Bootstraps</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                        </ul>
-                    </li>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 ">
+                    <li class="nav-item btn-outline-light"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item btn-outline-light "><a class="nav-link" href="#!">About</a></li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Maneger</a>
+                        <a class="nav-link text-dark btn-outline-light" asp-area="Admin" asp-controller="Category" asp-action="Index">Maneger</a>
                     </li>
                 </ul>
 
                 <form class="d-flex">
-                    <button class="btn btn-outline-dark" asp-area="Customer" asp-controller="Cart" asp-action="Index" type="submit">
+                    <button class="btn btn-warning" asp-area="Customer" asp-controller="Cart" asp-action="Index" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Cart
-                        <span class="showcart  badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        <span class="showcart  badge bg-primary text-white ms-1 rounded-pill">0</span>
                     </button>
                 </form>
             </div>
@@ -56,7 +48,7 @@
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop in style</h1>
+                <h1 class="display-4 fw-bolder">Shop celphone</h1>
                 <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
             </div>
         </div>
@@ -65,7 +57,7 @@
     <!-- Section-->
     @RenderBody()
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 text-bg-secondary">
         <div class="container"><p class="m-0 text-center text-white">Copyright &copy;NguyenThienKhang Your Website 2023</p></div>
     </footer>
     <!-- Bootstrap core JS-->
@@ -76,4 +68,5 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/frontend/js/scripts.js"></script>
 </body>
+
 </html>
