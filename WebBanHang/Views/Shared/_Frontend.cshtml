@@ -22,6 +22,9 @@
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="#">
+            <img src="~/images/products/Logo-The-Gioi-Di-Dong-MWG-Y-V (1).webp" alt="Logo" style="width:100px;">
+        </a>
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">Start Bootstraps</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -33,7 +36,7 @@
                         <a class="nav-link text-dark btn-outline-light" asp-area="Admin" asp-controller="Category" asp-action="Index">Maneger</a>
                     </li>
                 </ul>
-
+                <partial name="_LoginPartial"/>
                 <form class="d-flex">
                     <button class="btn btn-warning" asp-area="Customer" asp-controller="Cart" asp-action="Index" type="submit">
                         <i class="bi-cart-fill me-1"></i>
