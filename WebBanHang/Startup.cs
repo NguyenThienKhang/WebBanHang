@@ -31,7 +31,7 @@ namespace WebBanHang
             services.AddDbContext<ApplicationDbContext>(
             options => options.UseSqlServer("name=DefaultConnection"));
             services.AddSession();
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
         }
 
@@ -52,7 +52,7 @@ namespace WebBanHang
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSession();
 
