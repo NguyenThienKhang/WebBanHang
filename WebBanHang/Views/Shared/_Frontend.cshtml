@@ -20,6 +20,17 @@
 </head>
 
 <body>
+    @*Header*@
+    <header class="bg-dark py-2">
+        <div class="container px-2 px-lg-2 my-2">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shop celphone</h1>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+            </div>
+        </div>
+
+    </header>
+
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <a class="navbar-brand" href="#">
@@ -36,7 +47,7 @@
                         <a class="nav-link text-dark btn-outline-light" asp-area="Admin" asp-controller="Category" asp-action="Index">Maneger</a>
                     </li>
                 </ul>
-                <partial name="_LoginPartial"/>
+                <partial name="_LoginPartial" />
                 <form class="d-flex">
                     <button class="btn btn-warning" asp-area="Customer" asp-controller="Cart" asp-action="Index" type="submit">
                         <i class="bi-cart-fill me-1"></i>
@@ -47,16 +58,7 @@
             </div>
         </div>
     </nav>
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop celphone</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-            </div>
-        </div>
 
-    </header>
     <!-- Section-->
     @RenderBody()
     <!-- Footer-->
